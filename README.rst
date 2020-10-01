@@ -10,6 +10,28 @@ IBM website: `JSONx conversion rules
 Note: currently only writing support has been implemented; there's no parser
 yet!
 
+Example
+=======
+
+JSON:
+
+.. code-block:: json
+
+  {"foo": [1, "bar", []]}
+
+JSONX:
+
+.. code-block:: xml
+
+  <?xml version="1.0" encoding="utf-8"?>
+  <json:object xmlns:json="http://www.ibm.com/xmlns/prod/2009/jsonx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.datapower.com/schemas/json jsonx.xsd">
+    <json:array name="foo">
+      <json:number>1</json:number>
+      <json:string>bar</json:string>
+      <json:array/>
+    </json:array>
+  </json:object>
+
 WHAT? WHY WOULD I NEED THIS?
 ============================
 
