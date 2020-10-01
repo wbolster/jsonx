@@ -19,7 +19,7 @@ JSON:
 
   {"foo": [1, "bar", []]}
 
-JSONX:
+JSONx:
 
 .. code-block:: xml
 
