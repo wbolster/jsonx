@@ -32,8 +32,8 @@ def _write_item(xg, value, name=None, root=False):
 
     if isinstance(value, dict):
         xg.startElement('json:object', _make_attrs(name, root))
-        for k, v in value.iteritems():
-            if not isinstance(k, (str, unicode)):
+        for k, v in value.items():
+            if not isinstance(k, str):
                 raise ValueError("json keys must be strings")
             _write_item(xg, v, name=k)
 
@@ -55,7 +55,7 @@ def _write_item(xg, value, name=None, root=False):
         xg.endElement('json:null')
         return
 
-    if isinstance(value, unicode):
+    if isinstance(value, str):
         xg.startElement('json:string', _make_attrs(name))
         xg.characters(value)
         xg.endElement('json:string')
@@ -67,9 +67,9 @@ def _write_item(xg, value, name=None, root=False):
         xg.endElement('json:boolean')
         return
 
-    if isinstance(value, (int, long, float)):
+    if isinstance(value, (int, float)):
         xg.startElement('json:number', _make_attrs(name))
-        xg.characters(unicode(value))
+        xg.characters(str(value))
         xg.endElement('json:number')
         return
 

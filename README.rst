@@ -38,7 +38,7 @@ The interface mimics the familiar `json` module::
     }
 
     # To obtain a byte string, use dumps()
-    value = jsonx.dump(obj)
+    value = jsonx.dumps(obj)
 
     # To write directly to a file-like object, use dump()
     with open("output.xml") as fp:
